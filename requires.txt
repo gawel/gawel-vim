@@ -1,5 +1,9 @@
 https://github.com/vim-scripts/bufexplorer.zip.git
+https://github.com/vim-scripts/django.vim.git
+git@github.com:gawel/gawel-vim.git
 https://github.com/vim-scripts/github-theme.git
 https://github.com/sjl/gundo.vim.git
 https://github.com/scrooloose/nerdtree.git
 https://github.com/vim-scripts/python.vim.git
+https://github.com/sophacles/vim-bundle-mako.git
+https://github.com/bronson/vim-trailing-whitespace.git

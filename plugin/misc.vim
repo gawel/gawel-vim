@@ -1,5 +1,3 @@
-command! -nargs=0 TrailingSpaces :%s/\s\+$//
-
 imap <C-X> <C-X>s
 
 augroup dtml
