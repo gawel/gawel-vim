@@ -70,7 +70,6 @@ map ;p :split ~/bear/pytheon/src/pytheon<CR>,e/
 " ENV
 """"""""""""""""""""""""""""""""""""""""""
 let winManagerWindowLayout = 'FileExplorer|TagList'
-let $models="~/.vim/models/"
 
 """"""""""""""""""""""""""""""""""""""""""
 " FUNCTIONS

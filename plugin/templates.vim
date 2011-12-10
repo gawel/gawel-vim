@@ -1,5 +1,5 @@
 augroup zpt
-    au BufNewFile *[^w].html,*[^w].?pt,*[^w].pt,*.mako  read $HOME/.vim/models/template.pt
+    au BufNewFile *[^w].html,*[^w].?pt,*[^w].pt,*.mako  read $HOME/.vim/bundle/gawel-vim/models/template.pt
     au BufNewFile,BufRead *.?pt,*.pt,*.mako   setf html
     au BufNewFile,BufRead *[^w].html,*.?pt,*.pt,*.mako   :set fileformat=unix
     au BufNewFile,BufRead *[^w].html,*.?pt,*.pt,*.mako   :ToUnixFormat
@@ -42,20 +42,20 @@ endfunction
 
 augroup metadata
     au BufEnter *.metadata    setfiletype dosini
-    au BufNewFile *.metadata  read $HOME/.vim/models/metadata.metadata 
+    au BufNewFile *.metadata  read $HOME/.vim/bundle/gawel-vim/models/metadata.metadata 
 augroup END
 
 augroup buildout
     au BufEnter buildout.cfg    setfiletype dosini
-    au BufNewFile buildout.cfg  read $HOME/.vim/models/buildout.cfg 
+    au BufNewFile buildout.cfg  read $HOME/.vim/bundle/gawel-vim/models/buildout.cfg 
 augroup END
 
 augroup hgignore
-    au BufNewFile .hgignore  read $HOME/.vim/models/hgignore
+    au BufNewFile .hgignore  read $HOME/.vim/bundle/gawel-vim/models/hgignore
 augroup END
 
 augroup hgrc
     au BufEnter .hgrc,hgrc    setfiletype dosini
-    au BufNewFile .hgrc,hgrc  read $HOME/.vim/models/hgrc
+    au BufNewFile .hgrc,hgrc  read $HOME/.vim/bundle/gawel-vim/models/hgrc
 augroup END
 

@@ -1,9 +1,9 @@
 
 augroup python
-    au BufNewFile *.py,*.py_tmpl    read $HOME/.vim/models/python.py
-    au BufNewFile *.?py   read $HOME/.vim/models/script.cpy
-    au BufNewFile browser.py :read $HOME/.vim/models/browser.py
-    au BufNewFile interface*.py :read $HOME/.vim/models/interfaces.py
+    au BufNewFile *.py,*.py_tmpl    read $HOME/.vim/bundle/gawel-vim/models/python.py
+    au BufNewFile *.?py   read $HOME/.vim/bundle/gawel-vim/models/script.cpy
+    au BufNewFile browser.py :read $HOME/.vim/bundle/gawel-vim/models/browser.py
+    au BufNewFile interface*.py :read $HOME/.vim/bundle/gawel-vim/models/interfaces.py
     au BufNewFile,BufRead *.?py,*.py,*.py_tmpl setf python
     au BufNewFile,BufRead *.?py,*.py,*.py_tmpl :silent call FuToUtf8()
     au BufNewFile,BufRead *.?py,*.py,*.py_tmpl :set fileformat=unix
@@ -23,7 +23,7 @@ function! PyFile()
     vmap <buffer> ,c :call PythonCommentSelection()<CR>
     vmap <buffer> ,u :call PythonUncommentSelection()<CR>
     nmap <buffer> ,t :!python %<cr>
-    nmap <buffer> ffb <Esc>:read $HOME/.vim/models/browser.py<CR>/FIXME<CR>:1<CR>/<CR>
+    nmap <buffer> ffb <Esc>:read $HOME/.vim/bundle/gawel-vim/models/browser.py<CR>/FIXME<CR>:1<CR>/<CR>
     imap <buffer> def<Space> def (self):<Esc>o"""<Esc>o"""<Esc><Up><Up><End><S-B>i
     imap <buffer> xxx import pdb;pdb.set_trace()
     source $HOME/.vim/ftplugin/python_fn.vim
