@@ -15,10 +15,9 @@ augroup END
 function! PyFile()
     set tabstop=4
     set shiftwidth=4
+    set number
     setlocal spelllang=en
     setlocal spell
-    highlight Statement ctermfg=darkgreen guifg=darkgreen
-    highlight Identifier ctermfg=blue guifg=blue
     set makeprg=python\ -c\ \"import\ py_compile,sys;\ sys.stderr=sys.stdout;\ py_compile.compile(r'%')\"
     set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
     vmap <buffer> ,c :call PythonCommentSelection()<CR>
