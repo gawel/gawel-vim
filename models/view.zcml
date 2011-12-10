@@ -1,0 +1,7 @@
+    <browser:view
+        name=""
+        for=""
+        class=""
+        permission="zope.Public"
+        />
+
