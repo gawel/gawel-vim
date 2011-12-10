@@ -1,0 +1,5 @@
+https://github.com/vim-scripts/bufexplorer.zip.git
+https://github.com/vim-scripts/github-theme.git
+https://github.com/sjl/gundo.vim.git
+https://github.com/scrooloose/nerdtree.git
+https://github.com/vim-scripts/python.vim.git
