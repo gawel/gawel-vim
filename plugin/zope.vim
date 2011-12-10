@@ -8,17 +8,17 @@ augroup python
     au BufNewFile,BufRead *.?py,*.py,*.py_tmpl :silent call FuToUtf8()
     au BufNewFile,BufRead *.?py,*.py,*.py_tmpl :set fileformat=unix
     au BufNewFile,BufRead *.?py,*.py,*.py_tmpl :silent call PyFile()
-"    au BufWritePre *.?py,*.py :silent call CleanPythonCode()
+    au BufWinEnter *.?py,*.py,*.py_tmpl :let w:m1=matchadd('Search', '\%<81v.\%>77v', -1)
+    au BufWinEnter *.?py,*.py,*.py_tmpl :let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 augroup END
 
 " mapping for py
 function! PyFile()
-    set tabstop=4
-    set shiftwidth=4
-    set number
+    setlocal tabstop=4
+    setlocal shiftwidth=4
+    setlocal number
     setlocal spelllang=en
     setlocal spell
-    set makeprg=python\ -c\ \"import\ py_compile,sys;\ sys.stderr=sys.stdout;\ py_compile.compile(r'%')\"
     set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
     vmap <buffer> ,c :call PythonCommentSelection()<CR>
     vmap <buffer> ,u :call PythonUncommentSelection()<CR>

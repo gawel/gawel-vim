@@ -40,6 +40,11 @@ map <S-M> <PageDown>
 map <S-L> <PageUp>
 map <C-P> :w<CR>:bp<CR>
 
+map <C-H> <C-W>h
+map <C-L> <C-W>l
+map h <C-W>h
+map l <C-W>l
+
 imap <C-H> <Left>
 imap <C-J> <Esc>Bi
 imap <C-K> <Esc>Wi
@@ -50,7 +55,7 @@ imap <C-B> <Esc>ldwi
 map ff :call system('open /Applications/Firefox.app')<CR>
 map tt :call system('open /Applications/iTerm.app')<CR>
 
-map ,b :BufExplorer<CR> 
+map ,b :BufExplorer<CR>
 map ,w :wall<CR>
 map ,q :wqall<CR>
 map ,o :only<CR>
@@ -78,7 +83,7 @@ let winManagerWindowLayout = 'FileExplorer|TagList'
 " charset function
 command! ToUnixFormat :set fileformat=unix
 
-command! ToUtf8 call FuToUtf8()    
+command! ToUtf8 call FuToUtf8()
 function! FuToUtf8()
     silent! set encoding=utf-8
     silent! set fileencoding=utf-8
