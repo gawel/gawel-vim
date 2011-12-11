@@ -9,7 +9,3 @@ augroup filetypedetect
   au! BufRead,BufNewFile *.gtd	set filetype=gtd
 augroup END
 
-augroup make
-  au! BufRead,BufNewFile,BufEnter Makefile setlocal noexpandtab
-augroup END
-

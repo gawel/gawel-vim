@@ -1,16 +1,3 @@
-syntax on
-set noai
-set expandtab
-set tabstop=4
-set shiftwidth=4
-set ignorecase smartcase
-set incsearch
-set autoread
-set hlsearch
-set mouse=a
-set noerrorbells
-set visualbell t_vb=
-set ls=2
 set statusline=%F%m%r%h%w\ format=%{&ff}\ type=%Y\ x=%l\ y=%v\ %p%%\ %{strftime(\"%d/%m/%y\ -\%H:%M\")}
 set grepprg=grep\ -R\ --exclude=\"*.pyc\"\ $*\ *\ /dev/null
 let g:explDetailedHelp=0
