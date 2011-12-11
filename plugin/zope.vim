@@ -26,7 +26,6 @@ function! PyFile()
     nmap <buffer> ffb <Esc>:read $HOME/.vim/bundle/gawel-vim/models/browser.py<CR>/FIXME<CR>:1<CR>/<CR>
     imap <buffer> def<Space> def (self):<Esc>o"""<Esc>o"""<Esc><Up><Up><End><S-B>i
     imap <buffer> xxx import pdb;pdb.set_trace()
-    source $HOME/.vim/ftplugin/python_fn.vim
 endfunction
 
 " zope function
