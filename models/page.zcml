@@ -1,9 +1,0 @@
-    <browser:page
-        name=""
-        for=""
-        class=""
-        attribute=""
-        template=""
-        permission="zope.Public"
-        />
-

@@ -1,3 +1,10 @@
+augroup python
+    au BufNewFile *.py,*.py_tmpl    read $HOME/.vim/bundle/gawel-vim/models/python.py
+    au BufNewFile,BufRead *.?py,*.py,*.py_tmpl setf python
+    au BufNewFile,BufRead *.?py,*.py,*.py_tmpl vmap <buffer> ,c :call PythonCommentSelection()<CR>
+    au BufNewFile,BufRead *.?py,*.py,*.py_tmpl vmap <buffer> ,u :call PythonUncommentSelection()<CR>
+augroup END
+
 augroup zpt
     au BufNewFile *[^w].html,*[^w].?pt,*[^w].pt,*.mako  read $HOME/.vim/bundle/gawel-vim/models/template.pt
     au BufNewFile,BufRead *.?pt,*.pt,*.mako   setf html
@@ -8,6 +15,14 @@ augroup zpt
     au BufNewFile,BufRead *[^w].html,*.?pt,*.pt,*.mako   :silent call AutoHTML()
     au BufNewFile,BufRead *.html   :silent call AutoDjango()
     au BufNewFile,BufRead *.?pt,*.pt   :silent call AutoPT()
+augroup END
+
+augroup zcml
+    au BufNewFile *.zcml    read $HOME/.vim/bundle/gawel-vim/models/configure.zcml
+    au BufNewFile,BufRead *.zcml   setf xml
+    au BufNewFile,BufRead *.zcml imap <buffer> ppp <Esc>:read $HOME/.vim/bundle/gawel-vim/models/page.zcml<CR>
+    au BufNewFile,BufRead *.zcml imap <buffer> vvv <Esc>:read $HOME/.vim/bundle/gawel-vim/models/view.zcml<CR>
+    au BufNewFile,BufRead *.zcml imap <buffer> uuu <Esc>:read $HOME/.vim/bundle/gawel-vim/models/utility.zcml<CR>
 augroup END
 
 function! AutoHTML()

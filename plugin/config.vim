@@ -5,7 +5,6 @@ let g:netrw_list_hide='^\./$,\.svn/$,\.hg/$,\.pyc$,\.svn$,\.gz$,\.tgz$,\.exe$,\.
 let NERDTreeIgnore=['develop-eggs', 'parts$', '^\./$', '\.svn/$', '\.hg/$', '\.pyc$', '\.egg-info', '\.svn$', '\.gz$', '\.tgz$', '\.exe$', '\.zip$']
 let g:netrw_hide=1
 let g:bufExplorerShowRelativePath=1
-filetype indent on
 
 """"""""""""""""""""""""""""""""""""""""""
 " MAPPING
@@ -37,6 +36,8 @@ imap <C-J> <Esc>Bi
 imap <C-K> <Esc>Wi
 imap <C-L> <Right>
 
+imap <C-X> <C-X>s
+
 imap <C-B> <Esc>ldwi
 
 map ff :call system('open /Applications/Firefox.app')<CR>
@@ -48,8 +49,7 @@ map ,q :wqall<CR>
 map ,o :only<CR>
 
 map ,g :vimgrep <cword> %:p:h/*<CR>:cwindow<CR>
-map ,c ,e:call histadd(':','edit '.substitute(expand('%:p:h'),$HOME,"~","").'/')<CR>:<Up>
-map ,t ;t:call histadd(':','edit '.substitute(expand('%:p:h'),$HOME,"~","").'/')<CR>:<Up>
+map ,c :call histadd(':','edit '.substitute(expand('%:p:h'),$HOME,"~","").'/')<CR>:<Up>
 map ,e :edit %:p:h<CR>:5<CR>
 map ;e :split %:p:h<CR>:5<CR>
 map ;v :vsplit %:p:h<CR>:5<CR>
@@ -57,28 +57,4 @@ map ;t :tabfirst<CR>
 
 map ,p :open ~/bear/pytheon/src/pytheon<CR>,e/
 map ;p :split ~/bear/pytheon/src/pytheon<CR>,e/
-
-""""""""""""""""""""""""""""""""""""""""""
-" ENV
-""""""""""""""""""""""""""""""""""""""""""
-let winManagerWindowLayout = 'FileExplorer|TagList'
-
-""""""""""""""""""""""""""""""""""""""""""
-" FUNCTIONS
-""""""""""""""""""""""""""""""""""""""""""
-
-" charset function
-command! ToUnixFormat :set fileformat=unix
-
-command! ToUtf8 call FuToUtf8()
-function! FuToUtf8()
-    silent! set encoding=utf-8
-    silent! set fileencoding=utf-8
-    silent! set termencoding=iso-8859-15
-endfunction
-
-if has("multi_byte")
-    call FuToUtf8()
-endif
-
 

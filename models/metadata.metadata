@@ -1,9 +1,0 @@
-[default]
-title =
-
-[validators]
-validators =
-
-[actions]
-action.success = traverse_to:string:
-action.failure = traverse_to_action:string:
