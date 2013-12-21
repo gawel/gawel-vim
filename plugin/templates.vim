@@ -9,7 +9,6 @@ augroup zpt
     au BufNewFile *[^w].html,*[^w].?pt,*[^w].pt,*.mako  read $HOME/.vim/bundle/gawel-vim/models/template.pt
     au BufNewFile,BufRead *.?pt,*.pt,*.mako   setf html
     au BufNewFile,BufRead *[^w].html,*.?pt,*.pt,*.mako   :set fileformat=unix
-    au BufNewFile,BufRead *[^w].html,*.?pt,*.pt,*.mako   :ToUnixFormat
     au BufNewFile,BufRead *[^w].html,*.?pt,*.pt,*.mako   :let xml_use_xhtml = 1
     au BufNewFile,BufRead *[^w].html,*.?pt,*.pt,*.mako   :source ~/.vim/ftplugin/xml.vim
     au BufNewFile,BufRead *[^w].html,*.?pt,*.pt,*.mako   :silent call AutoHTML()
