@@ -55,6 +55,5 @@ map ;e :split %:p:h<CR>:5<CR>
 map ;v :vsplit %:p:h<CR>:5<CR>
 map ;t :tabfirst<CR>
 
-map ,p :open ~/bear/pytheon/src/pytheon<CR>,e/
-map ;p :split ~/bear/pytheon/src/pytheon<CR>,e/
+map ,p :CtrlP<CR>
 

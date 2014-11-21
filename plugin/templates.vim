@@ -1,6 +1,15 @@
+augroup go
+    au BufNewFile,BufRead *.go   setf go
+augroup END
+
+augroup less
+    au BufNewFile,BufRead *.less   setf less
+augroup END
+
 augroup python
     au BufNewFile *.py,*.py_tmpl    read $HOME/.vim/bundle/gawel-vim/models/python.py
     au BufNewFile,BufRead *.?py,*.py,*.py_tmpl setf python
+    au BufNewFile,BufRead *.?py,*.py_tmpl vmap <buffer> <C-i> :s/\%V\(.*\)\%V/_('\1')/<CR>
     au BufNewFile,BufRead *.?py,*.py,*.py_tmpl vmap <buffer> ,c :call PythonCommentSelection()<CR>
     au BufNewFile,BufRead *.?py,*.py,*.py_tmpl vmap <buffer> ,u :call PythonUncommentSelection()<CR>
 augroup END
@@ -9,12 +18,11 @@ augroup zpt
     au BufNewFile *[^w].html,*[^w].?pt,*[^w].pt,*.mako  read $HOME/.vim/bundle/gawel-vim/models/template.pt
     au BufNewFile,BufRead *.?pt,*.pt,*.mako   setf html
     au BufNewFile,BufRead *[^w].html,*.?pt,*.pt,*.mako   :set fileformat=unix
-    au BufNewFile,BufRead *[^w].html,*.?pt,*.pt,*.mako   :let xml_use_xhtml = 1
-    au BufNewFile,BufRead *[^w].html,*.?pt,*.pt,*.mako   :source ~/.vim/ftplugin/xml.vim
     au BufNewFile,BufRead *[^w].html,*.?pt,*.pt,*.mako   :silent call AutoHTML()
     au BufNewFile,BufRead *.html   :silent call AutoDjango()
     au BufNewFile,BufRead *.?pt,*.pt   :silent call AutoPT()
 augroup END
+
 
 augroup zcml
     au BufNewFile *.zcml    read $HOME/.vim/bundle/gawel-vim/models/configure.zcml
@@ -25,10 +33,12 @@ augroup zcml
 augroup END
 
 function! AutoHTML()
+    setlocal filetype=html
     setlocal tabstop=2
     setlocal shiftwidth=2
     setlocal spelllang=en
     setlocal spell
+    vmap <buffer> <C-i> :s/\%V\(.*\)\%V/${_('\1')}/<CR>
 endfunction
 
 function! AutoDjango()
@@ -56,12 +66,12 @@ endfunction
 
 augroup metadata
     au BufEnter *.metadata    setfiletype dosini
-    au BufNewFile *.metadata  read $HOME/.vim/bundle/gawel-vim/models/metadata.metadata 
+    au BufNewFile *.metadata  read $HOME/.vim/bundle/gawel-vim/models/metadata.metadata
 augroup END
 
 augroup buildout
     au BufEnter buildout.cfg    setfiletype dosini
-    au BufNewFile buildout.cfg  read $HOME/.vim/bundle/gawel-vim/models/buildout.cfg 
+    au BufNewFile buildout.cfg  read $HOME/.vim/bundle/gawel-vim/models/buildout.cfg
 augroup END
 
 augroup hgignore
