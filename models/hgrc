@@ -1,8 +1,0 @@
-[paths]
-default = ssh://hg/
-bb = ssh://bb/gawel/
-gg = ssh://hg/
-py = https://hg.afpy.org/gawel/
-
-[ui]
-username = Gael Pasgrimaud <gael@gawel.org>
