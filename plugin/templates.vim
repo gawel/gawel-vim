@@ -23,9 +23,9 @@ augroup END
 
 augroup html
     au BufNewFile *[^w].html,*[^w].tpl,*.mako  read $HOME/.vim/bundle/gawel-vim/models/template.html
-    au BufNewFile,BufRead *.tpl,*.mako   setf html
-    au BufNewFile,BufRead *[^w].html,*.tpl,*.mako   :set fileformat=unix
-    au BufNewFile,BufRead *[^w].html,*.tpl,*.mako   :silent call AutoHTML()
+    au BufNewFile,BufRead *.tpl,*.mako,*.vue   setf html
+    au BufNewFile,BufRead *[^w].html,*.tpl,*.mako,*.vue   :set fileformat=unix
+    au BufNewFile,BufRead *[^w].html,*.tpl,*.mako,*.vue   :silent call AutoHTML()
     au BufNewFile,BufRead *.html   :silent call AutoJinja()
 augroup END
 
